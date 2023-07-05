@@ -8,18 +8,21 @@ use Illuminate\Database\Migrations\Migration;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     *
+     *  Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('Trains', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table->string('destination');
             $table->string('departure');
             $table->string('timeDestination');
             $table->string('timeDeparture');
+            $table->timestamps();
+
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Trains');
+        Schema::dropIfExists('trains');
     }
 };
